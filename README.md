@@ -28,7 +28,7 @@ To see a list of options for the generate command:
 
     Options:
       [--ruby-version=RUBY_VERSION]  # Ruby version for Gemfile
-                                     # Default: 2.0.0
+                                     # Default: 2.3.1
       [--tiny]                       # Generate views inline; do not create /public folder
       [--type=TYPE]                  # Architecture type (classic or modular)
                                      # Default: classic
