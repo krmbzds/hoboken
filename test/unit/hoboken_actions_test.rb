@@ -29,11 +29,11 @@ module Hoboken
     end
 
     def test_gem_with_version
-      target.gem "sinatra", version: "1.4.4", verbose: false
+      target.gem "sinatra", version: "1.4.7", verbose: false
       expected =
         "source \"https://rubygems.org\"\n" +
         "ruby \"2.3.1\"\n\n" +
-        "gem \"sinatra\", \"~> 1.4.4\""
+        "gem \"sinatra\", \"~> 1.4.7\""
 
       assert_equal(expected, File.read(gemfile))
     end
@@ -49,63 +49,63 @@ module Hoboken
     end
 
     def test_gem_with_group
-      target.gem "sinatra", version: "1.4.4", group: :test, verbose: false
+      target.gem "sinatra", version: "1.4.7", group: :test, verbose: false
       expected =
         "source \"https://rubygems.org\"\n" +
         "ruby \"2.3.1\"\n\n" +
-        "gem \"sinatra\", \"~> 1.4.4\", group: :test"
+        "gem \"sinatra\", \"~> 1.4.7\", group: :test"
 
       assert_equal(expected, File.read(gemfile))
     end
 
     def test_gem_with_multiple_groups
-      target.gem "sinatra", version: "1.4.4", group: [:test, :development], verbose: false
+      target.gem "sinatra", version: "1.4.7", group: [:test, :development], verbose: false
       expected =
         "source \"https://rubygems.org\"\n" +
         "ruby \"2.3.1\"\n\n" +
-        "gem \"sinatra\", \"~> 1.4.4\", group: [:test, :development]"
+        "gem \"sinatra\", \"~> 1.4.7\", group: [:test, :development]"
 
       assert_equal(expected, File.read(gemfile))
     end
 
     def test_gem_with_require
-      target.gem "sinatra", version: "1.4.4", require: false, verbose: false
+      target.gem "sinatra", version: "1.4.7", require: false, verbose: false
       expected =
         "source \"https://rubygems.org\"\n" +
         "ruby \"2.3.1\"\n\n" +
-        "gem \"sinatra\", \"~> 1.4.4\", require: false"
+        "gem \"sinatra\", \"~> 1.4.7\", require: false"
 
       assert_equal(expected, File.read(gemfile))
     end
 
     def test_gem_with_require_and_group
-      target.gem "sinatra", version: "1.4.4", require: false, group: :test, verbose: false
+      target.gem "sinatra", version: "1.4.7", require: false, group: :test, verbose: false
       expected =
         "source \"https://rubygems.org\"\n" +
         "ruby \"2.3.1\"\n\n" +
-        "gem \"sinatra\", \"~> 1.4.4\", require: false, group: :test"
+        "gem \"sinatra\", \"~> 1.4.7\", require: false, group: :test"
 
       assert_equal(expected, File.read(gemfile))
     end
 
     def test_gem_with_require_and_multiple_groups
-      target.gem "sinatra", version: "1.4.4", require: false, group: [:test, :development], verbose: false
+      target.gem "sinatra", version: "1.4.7", require: false, group: [:test, :development], verbose: false
       expected =
         "source \"https://rubygems.org\"\n" +
         "ruby \"2.3.1\"\n\n" +
-        "gem \"sinatra\", \"~> 1.4.4\", require: false, group: [:test, :development]"
+        "gem \"sinatra\", \"~> 1.4.7\", require: false, group: [:test, :development]"
 
       assert_equal(expected, File.read(gemfile))
     end
 
     def test_gem_multiple
-      target.gem "sinatra", version: "1.4.4", verbose: false
-      target.gem "thin", version: "1.4.4", verbose: false
+      target.gem "sinatra", version: "1.4.7", verbose: false
+      target.gem "thin", version: "1.7", verbose: false
       expected =
         "source \"https://rubygems.org\"\n" +
         "ruby \"2.3.1\"\n\n" +
-        "gem \"sinatra\", \"~> 1.4.4\"\n" +
-        "gem \"thin\", \"~> 1.4.4\""
+        "gem \"sinatra\", \"~> 1.4.7\"\n" +
+        "gem \"thin\", \"~> 1.7\""
 
       assert_equal(expected, File.read(gemfile))
     end
