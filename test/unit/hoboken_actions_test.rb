@@ -117,7 +117,6 @@ module Hoboken
     def setup
       @target = Target.new
       @text = <<-TEXT
-
 This is some
 text that needs
 to be indented.
@@ -126,7 +125,6 @@ TEXT
 
     def test_indent_with_one_space
       expected = <<-TEXT
-
  This is some
  text that needs
  to be indented.
@@ -137,7 +135,6 @@ TEXT
 
     def test_indent_with_two_spaces
       expected = <<-TEXT
-
   This is some
   text that needs
   to be indented.
